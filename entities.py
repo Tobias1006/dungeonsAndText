@@ -6,8 +6,8 @@ class Entitiy:
                  health: int,
                  dmg: int, 
                  spd: int, 
-                 arm: int = None, 
-                 dmgres: int = None,
+                 arm: int = 0, 
+                 dmgres: int = 0,
                  name:str = None):
         self.name = name
         self.kind = kind
@@ -25,7 +25,7 @@ class Entitiy:
     
 class Human(Entitiy):
     def __init__(self, name:str):
-        super.__init__(Kinds.HUMAN, 
+        super().__init__(Kinds.HUMAN, 
                        100, 
                        30, 
                        10, 
