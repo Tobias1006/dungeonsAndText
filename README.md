@@ -9,4 +9,3 @@ At the moment I am to solidify my understanding of coding, data bases etc. - hen
 ## About this project 
 This is my first personal project and is being developed as part of the boot.dev course for Backend Development. 
 
-
