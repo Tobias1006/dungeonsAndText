@@ -4,8 +4,8 @@ class Entitiy:
     def __init__(self, 
                  kind: Kinds, 
                  health: int,
-                 dmg: int, 
                  spd: int, 
+                 dmg: int, 
                  arm: int = 0, 
                  dmgres: int = 0,
                  name:str = None):
@@ -21,7 +21,10 @@ class Entitiy:
         self.dmgres = dmgres
 
     def attack(self, other):
-        pass
+        other.health -= self.dmg
+        # (self.dmg-other.arm)
+        # ((self.dmg-other.arm)*(1-(other.dmgres/100)))
+        return other.health
     
 class Human(Entitiy):
     def __init__(self, name:str):
@@ -34,7 +37,7 @@ class Human(Entitiy):
 
 class Elf(Entitiy):
     def __init__(self, name:str):
-        super.__init__(Kinds.ELF, 
+        super().__init__(Kinds.ELF, 
                        115, 
                        40, 
                        8, 
@@ -44,7 +47,7 @@ class Elf(Entitiy):
 
 class Dwarf(Entitiy):
     def __init__(self, name:str):
-        super.__init__(Kinds.DWARF, 
+        super().__init__(Kinds.DWARF, 
                        130, 
                        20, 
                        15, 
@@ -53,7 +56,7 @@ class Dwarf(Entitiy):
 
 class Orc(Entitiy):
     def __init__(self):
-        super.__init__(Kinds.ORC, 
+        super().__init__(Kinds.ORC, 
                        80, 
                        30, 
                        8, 
@@ -61,7 +64,7 @@ class Orc(Entitiy):
 
 class Troll(Entitiy):
     def __init__(self):
-        super.__init__(Kinds.TROLL, 
+        super().__init__(Kinds.TROLL, 
                        350, 
                        15, 
                        22, 
