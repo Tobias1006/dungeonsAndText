@@ -80,7 +80,7 @@ class TestParentNode(unittest.TestCase):
                 ent2.name
                 ]
         list2 = [Kinds.ELF,
-                 105,
+                 109,
                  40, 
                  8, 
                  4, 

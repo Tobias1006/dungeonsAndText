@@ -21,9 +21,7 @@ class Entitiy:
         self.dmgres = dmgres
 
     def attack(self, other):
-        other.health -= self.dmg
-        # (self.dmg-other.arm)
-        # ((self.dmg-other.arm)*(1-(other.dmgres/100)))
+        other.health -= int(round((self.dmg-other.arm)*(1-(other.dmgres/100))))
         return other.health
     
 class Human(Entitiy):
