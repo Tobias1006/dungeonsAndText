@@ -1,13 +1,13 @@
-from constAndEnum import Kinds
+from const_and_enum import Kinds
 
 class Entity:
     def __init__(self, 
                  kind: Kinds, 
                  health: int,
                  dmg: int, 
-                 arm: int = 0, 
-                 dmgres: int = 0,
-                 name:str = None) -> None:
+                 arm: int, 
+                 dmgres: int,
+                 name:str) -> None:
         self.name = name
         self.kind = kind
         self.health = health
@@ -29,8 +29,9 @@ class Human(Entity):
         super().__init__(Kinds.HUMAN, 
                        100, 
                        10, 
-                       3)
-        self.name = name
+                       3,
+                       0, 
+                       name)
 
 class Elf(Entity):
     def __init__(self, name:str) -> None:
@@ -38,23 +39,26 @@ class Elf(Entity):
                        115, 
                        8, 
                        4, 
-                       2)
-        self.name = name
+                       2, 
+                       name)
 
 class Dwarf(Entity):
     def __init__(self, name:str) -> None:
         super().__init__(Kinds.DWARF, 
                        130, 
                        15, 
-                       5)
-        self.name = name
+                       5,
+                       0,
+                       name)
 
 class Orc(Entity):
     def __init__(self) -> None:
         super().__init__(Kinds.ORC, 
                        80, 
                        8, 
-                       3)
+                       3,
+                       0,
+                       None)
 
 class Troll(Entity):
     def __init__(self) -> None:
@@ -62,4 +66,5 @@ class Troll(Entity):
                        350, 
                        22, 
                        10, 
-                       15)
+                       15,
+                       None)

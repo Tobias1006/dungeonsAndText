@@ -1,6 +1,6 @@
 from enum import Enum
 from entities import Entity
-from constAndEnum import Rooms
+from const_and_enum import Rooms
 
 class Room:
     def __init__(self,

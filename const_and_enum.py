@@ -8,14 +8,14 @@ class Kinds(Enum):
     TROLL = 'troll'
 
 class Rooms(Enum):
-    FIGHT = 'fight',
-    STORY = 'story',
-    HALLWAY = 'hallway',
+    FIGHT = 'fight'
+    STORY = 'story'
+    HALLWAY = 'hallway'
     END = 'end'
 
 class Actions(Enum):
-    REST = 'rest',
-    SEARCH = 'search',
-    EAT = 'eat',
-    FIGHT = 'fight',
+    REST = 'rest'
+    SEARCH = 'search'
+    EAT = 'eat'
+    FIGHT = 'fight'
     FLEE = 'flee'

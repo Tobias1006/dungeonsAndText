@@ -1,8 +1,8 @@
 import unittest
 from entities import Human, Dwarf, Elf, Orc, Troll
 from rooms import Hallway, Story, Fight, End
-from constAndEnum import Rooms
-from constAndEnum import Kinds
+from const_and_enum import Rooms
+from const_and_enum import Kinds
 
 class TestCreateRoom(unittest.TestCase):
     def test_create_room_hallway(self):
