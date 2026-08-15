@@ -10,7 +10,6 @@ class TestAttackEntity(unittest.TestCase):
         ent1.attack(ent2)
         list1 = [ent2.kind, 
                 ent2.health,
-                ent2.spd,
                 ent2.dmg, 
                 ent2.arm, 
                 ent2.dmgres,
@@ -18,7 +17,6 @@ class TestAttackEntity(unittest.TestCase):
                 ]
         list2 = [Kinds.ELF,
                  109,
-                 40, 
                  8, 
                  4, 
                  2,
@@ -32,24 +30,22 @@ class TestAttackEntity(unittest.TestCase):
         ent2 = Troll()
         print('Attack: dmg lower than arm')
         ent1.attack(ent2)
-        list1 = [ent1.kind, 
-                ent1.health,
-                ent1.spd,
-                ent1.dmg, 
-                ent1.arm, 
-                ent1.dmgres,
-                ent1.name
+        list1 = [ent2.kind, 
+                ent2.health,
+                ent2.dmg, 
+                ent2.arm, 
+                ent2.dmgres,
+                ent2.name
                 ]
         list2 = [Kinds.TROLL,
                  350,
-                 15,
                  22,
                  10,
                  15,
                  None
                  ]
         print(list1, list2)
-        self.assertNotEqual(list1, list2)
+        self.assertEqual(list1, list2)
 
 if __name__ == '__main__':
     unittest.main()

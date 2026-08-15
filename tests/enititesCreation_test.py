@@ -8,7 +8,6 @@ class TestCreateEntity(unittest.TestCase):
         print('Create Human: Greg')
         list1 = [ent1.kind, 
                  ent1.health,
-                 ent1.spd,
                  ent1.dmg, 
                  ent1.arm, 
                  ent1.dmgres,
@@ -16,7 +15,6 @@ class TestCreateEntity(unittest.TestCase):
                  ]
         list2 = [Kinds.HUMAN,
                  100,
-                 30,
                  10,
                  3,
                  0,
@@ -29,7 +27,6 @@ class TestCreateEntity(unittest.TestCase):
         print('Create Elf: Twinkle')
         list1 = [ent1.kind, 
                  ent1.health,
-                 ent1.spd,
                  ent1.dmg, 
                  ent1.arm, 
                  ent1.dmgres,
@@ -37,7 +34,6 @@ class TestCreateEntity(unittest.TestCase):
                  ]
         list2 = [Kinds.ELF,
                  115,
-                 40, 
                  8, 
                  4, 
                  2,
@@ -50,7 +46,6 @@ class TestCreateEntity(unittest.TestCase):
         print('Create Dwarf: Dunarin')
         list1 = [ent1.kind, 
                  ent1.health, 
-                 ent1.spd, 
                  ent1.dmg, 
                  ent1.arm, 
                  ent1.dmgres, 
@@ -58,7 +53,6 @@ class TestCreateEntity(unittest.TestCase):
                  ]
         list2 = [Kinds.DWARF,
                  130,
-                 20, 
                  15, 
                  5, 
                  0,
