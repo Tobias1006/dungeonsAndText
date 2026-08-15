@@ -17,54 +17,69 @@ class Entity:
         # Damage resistance (dmgres) is a percentage reduction to damage applied after armor
         # Dmgres 20 = 20% less damage
         self.dmgres = dmgres
+        self.is_alive = True
 
     def attack(self, other) -> int:
-        dmg_done = int(round((self.dmg-other.arm)*(1-(other.dmgres/100))))
-        if dmg_done > 0:
-            other.health -= dmg_done
-        return other.health
+        if other == self:
+            result = 'Can not attack yourself, sorry'
+            return result
+        if other.is_alive:
+            net_dmg = (self.dmg-other.arm)*(1-(other.dmgres/100))
+            dmg_done = max(1, int(round(net_dmg)))
+            other.health = max(0, other.health-dmg_done)
+            if other.health == 0:
+                other.die()
+            return dmg_done
+        else:
+            result = 'We do not do that here'
+            return result
+        
+            
     
+    def die(self) -> None:
+        self.is_alive = False
+
 class Human(Entity):
-    def __init__(self, name:str) -> None:
+    def __init__(self, name:str = 'Steven') -> None:
         super().__init__(Kinds.HUMAN, 
-                       100, 
                        10, 
+                       4, 
                        3,
                        0, 
                        name)
 
 class Elf(Entity):
-    def __init__(self, name:str) -> None:
+    def __init__(self, name:str = 'Twinkle') -> None:
         super().__init__(Kinds.ELF, 
-                       115, 
-                       8, 
-                       4, 
+                       12, 
+                       3, 
+                       3, 
                        2, 
                        name)
 
 class Dwarf(Entity):
-    def __init__(self, name:str) -> None:
+    def __init__(self, name:str = 'Grobnob') -> None:
         super().__init__(Kinds.DWARF, 
-                       130, 
-                       15, 
+                       13, 
+                       5, 
                        5,
                        0,
                        name)
 
 class Orc(Entity):
-    def __init__(self) -> None:
+    def __init__(self, name:str = 'Krsprk') -> None:
         super().__init__(Kinds.ORC, 
-                       80, 
                        8, 
+                       4, 
                        3,
                        0,
-                       None)
+                       name)
 
 class Troll(Entity):
-    def __init__(self) -> None:
+    def __init__(self, name:str = 'Dum-Dum') -> None:
         super().__init__(Kinds.TROLL, 
-                       350, 
+                       35, 
                        22, 
                        10, 
                        15,
-                       None)
+                       name)
